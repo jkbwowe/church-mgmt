@@ -46,9 +46,9 @@ export default async function AttendancePage() {
 
   // 2. Fetch existing attendance records
   const recordRows = await sql`
-    SELECT member_id, service_type, attendance_date::text as attendance_date
+    SELECT member_id, service_type, service_date::text as attendance_date
     FROM attendance
-    WHERE status = 'present' OR status = '1' OR status = 'true'
+    WHERE present = true
   `
 
   const existingRecords: ExistingAttendanceRecord[] = recordRows.map((r) => ({
@@ -60,15 +60,15 @@ export default async function AttendancePage() {
   // 3. Group historical attendance records by date & service type
   const historyRows = await sql`
     SELECT 
-      a.attendance_date::text as attendance_date,
+      a.service_date::text as attendance_date,
       a.service_type,
       m.id as member_id,
       m.full_name,
       m.member_code
     FROM attendance a
     JOIN members m ON a.member_id = m.id
-    WHERE a.status = 'present' OR a.status = '1' OR a.status = 'true'
-    ORDER BY a.attendance_date DESC, m.full_name ASC
+    WHERE a.present = true
+    ORDER BY a.service_date DESC, m.full_name ASC
   `
 
   // Group raw rows into AttendanceHistoryGroup structure
