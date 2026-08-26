@@ -1,7 +1,5 @@
-import postgres from 'postgres'
 import MemberForm, { DepartmentOption, ExistingMemberData } from './member-form'
-
-const sql = postgres(process.env.DATABASE_URL || '', { ssl: 'require' })
+import { sql } from '@/lib/db'
 
 export const revalidate = 0
 

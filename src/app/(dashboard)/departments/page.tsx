@@ -1,7 +1,5 @@
-import postgres from 'postgres'
 import DepartmentsClient, { DepartmentWithCount } from './departments-client'
-
-const sql = postgres(process.env.DATABASE_URL || '', { ssl: 'require' })
+import { sql } from '@/lib/db'
 
 export const revalidate = 0 // Always fetch fresh database stats
 

@@ -1,7 +1,5 @@
 import Link from 'next/link'
-import postgres from 'postgres'
-
-const sql = postgres(process.env.DATABASE_URL || '', { ssl: 'require' })
+import { sql } from '@/lib/db'
 
 export const revalidate = 0 // Fetch fresh data on page render
 

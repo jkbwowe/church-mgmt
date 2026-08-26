@@ -1,11 +1,9 @@
-import postgres from 'postgres'
 import PastoralClient, {
   PastoralDepartmentInfo,
   PastoralMemberOption,
   PastoralRecord,
 } from './pastoral-client'
-
-const sql = postgres(process.env.DATABASE_URL || '', { ssl: 'require' })
+import { sql } from '@/lib/db'
 
 export const revalidate = 0 // Always fetch fresh database records
 

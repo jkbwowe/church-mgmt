@@ -1,11 +1,9 @@
-import postgres from 'postgres'
 import ChoirClient, {
   ChoirDepartmentInfo,
   ChoirMember,
   ChoirRehearsal,
 } from './choir-client'
-
-const sql = postgres(process.env.DATABASE_URL || '', { ssl: 'require' })
+import { sql } from '@/lib/db'
 
 export const revalidate = 0 // Always fetch fresh database stats
 

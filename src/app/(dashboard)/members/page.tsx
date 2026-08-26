@@ -1,7 +1,6 @@
-import postgres from 'postgres'
 import MembersClient, { MemberWithDepartments } from './members-client'
+import { sql } from '@/lib/db'
 
-const sql = postgres(process.env.DATABASE_URL || '', { ssl: 'require' })
 
 export const revalidate = 0 // Ensure fresh member lists on render
 

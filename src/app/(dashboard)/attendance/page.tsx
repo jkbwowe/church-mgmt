@@ -1,11 +1,10 @@
-import postgres from 'postgres'
 import AttendanceClient, {
   AttendanceMember,
   ExistingAttendanceRecord,
   AttendanceHistoryGroup,
 } from './attendance-client'
 
-const sql = postgres(process.env.DATABASE_URL || '', { ssl: 'require' })
+import { sql } from '@/lib/db'
 
 export const revalidate = 0 // Always fetch fresh database state
 

@@ -2,11 +2,10 @@
 
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
-import postgres from 'postgres'
 import bcrypt from 'bcryptjs'
+import { sql } from '@/lib/db'
 
 // Reusing a single connection per serverless instance
-const sql = postgres(process.env.DATABASE_URL || '', { ssl: 'require' })
 
 export type LoginState = {
   error?: string | null;

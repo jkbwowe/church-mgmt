@@ -1,9 +1,7 @@
 'use server'
 
 import { redirect } from 'next/navigation'
-import postgres from 'postgres'
-
-const sql = postgres(process.env.DATABASE_URL || '', { ssl: 'require' })
+import { sql } from '@/lib/db'
 
 type MemberPayload = {
   member_code?: string

@@ -1,14 +1,12 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import postgres from 'postgres'
+import { sql } from '@/lib/db'
 import MemberTabs, {
   DepartmentMembership,
   ChoirRecord,
   PastoralRecord,
   AttendanceRecord,
 } from './member-tabs'
-
-const sql = postgres(process.env.DATABASE_URL || '', { ssl: 'require' })
 
 export const revalidate = 0 // Always render live data
 
