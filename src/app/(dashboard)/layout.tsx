@@ -41,7 +41,7 @@ export default async function DashboardLayout({
           {/* Church Branding Header */}
           <div className="p-6 border-b border-[#E7E5DE]/10">
             <h1 className="font-serif text-xl font-medium tracking-tight text-[#FFFFFF]">
-              Grace Community
+              Word of Life
             </h1>
             <p className="text-xs text-[#E7E5DE]/60 mt-0.5">Church Management System</p>
           </div>

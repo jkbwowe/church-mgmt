@@ -41,7 +41,7 @@ export default function LoginPage() {
         
         <div className="text-center mb-8">
           <h1 className="font-serif text-2xl font-medium text-[#1B2340] mb-1">
-            Grace Community Church
+            Word of Life Church
           </h1>
           <p className="text-sm text-[#4A5568]">
             Sign in to manage your church
